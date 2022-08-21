@@ -9,3 +9,4 @@ mkbootimg_tools/
 TWRP-device-tree-generator/
 vmlinux-to-elf/
 working/
+*.zip
