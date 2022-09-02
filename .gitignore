@@ -10,3 +10,4 @@ TWRP-device-tree-generator/
 vmlinux-to-elf/
 working/
 *.zip
+*.enc*
