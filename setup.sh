@@ -51,4 +51,5 @@ echo "[INFO] Installing 'uv'..."
 curl -LsSf https://astral.sh/uv/install.sh | sh > /dev/null 2>&1 
 
 # Finish
+source ~/.profile
 echo "[INFO] Set-up finished. You may now execute 'dumpyara.sh'."
