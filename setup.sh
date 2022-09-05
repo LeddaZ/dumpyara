@@ -44,6 +44,7 @@ PIP=pip3
 # Create virtual environment and install packages
 python3 -m venv .venv
 source .venv/bin/activate
+$PIP install lz4
 
 # Install 'uv' through pipx
 echo "[INFO] Installing 'uv'..."
