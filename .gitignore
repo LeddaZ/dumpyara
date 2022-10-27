@@ -11,3 +11,4 @@ vmlinux-to-elf/
 working/
 *.zip
 *.enc*
+.vscode/
