@@ -25,6 +25,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Create virtual environment and install packages
+"$PIP" install gdown
 python3 -m venv .venv
 source .venv/bin/activate
 "$PIP" install aospdtgen backports.lzma extract-dtb lz4 protobuf pycryptodome docopt zstandard
