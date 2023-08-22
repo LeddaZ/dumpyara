@@ -26,7 +26,7 @@ if command -v apt > /dev/null 2>&1; then
 # 'dnf' (Fedora)
 elif command -v dnf > /dev/null 2>&1; then
     # Install required packages in form of a 'for' loop
-    for package in unace unrar zip unzip sharutils uudeview arj cabextract file-roller dtc python3-pip brotli axel aria2 detox cpio lz4 python3-devel xz-devel p7zip p7zip-plugins ripgrep; do
+    for package in unrar zip unzip sharutils uudeview arj cabextract file-roller dtc python3-pip brotli axel aria2 detox cpio lz4 python3-devel xz-devel p7zip p7zip-plugins ripgrep; do
         echo "[INFO] Installing '${package}'..."
         $sudo_cmd dnf install -y "${package}" > /dev/null 2>&1 || \
             echo "[ERROR] Failed installing '${package}'."
