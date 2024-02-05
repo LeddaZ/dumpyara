@@ -30,6 +30,6 @@ fi
 "$PIP" install gdown
 python3 -m venv .venv
 source .venv/bin/activate
-"$PIP" install aospdtgen extract-dtb lz4 protobuf pycryptodome docopt zstandard
+"$PIP" install extract-dtb lz4 protobuf pycryptodome docopt zstandard
 
 source ~/.profile

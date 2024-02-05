@@ -226,17 +226,6 @@ manufacturer=$(echo "$manufacturer" | tr '[:upper:]' '[:lower:]' | tr -dc '[:pri
 printf "# %s\n- manufacturer: %s\n- platform: %s\n- codename: %s\n- flavor: %s\n- release: %s\n- id: %s\n- incremental: %s\n- tags: %s\n- fingerprint: %s\n- is_ab: %s\n- brand: %s\n- branch: %s\n- repo: %s\n" "$description" "$manufacturer" "$platform" "$codename" "$flavor" "$release" "$id" "$incremental" "$tags" "$fingerprint" "$is_ab" "$brand" "$branch" "$repo" > "$PROJECT_DIR"/working/"${UNZIP_DIR}"/README.md
 cat "$PROJECT_DIR"/working/"${UNZIP_DIR}"/README.md
 
-# Generate AOSP device tree
-if python3 -c "import aospdtgen"; then
-    echo "aospdtgen installed, generating device tree"
-    mkdir -p "${PROJECT_DIR}/working/${UNZIP_DIR}/aosp-device-tree"
-    if python3 -m aospdtgen . --output "${PROJECT_DIR}/working/${UNZIP_DIR}/aosp-device-tree"; then
-        echo "AOSP device tree successfully generated"
-    else
-        echo "Failed to generate AOSP device tree"
-    fi
-fi
-
 # copy file names
 chown "$(whoami)" ./* -R
 chmod -R u+rwX ./* #ensure final permissions
