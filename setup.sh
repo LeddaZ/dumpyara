@@ -22,6 +22,7 @@ if command -v apt > /dev/null 2>&1; then
         $sudo_cmd apt install  -y "${package}" > /dev/null 2>&1 || \
             echo "[ERROR] Failed installing '${package}'."
     done
+    PIP=pip3
 # 'dnf' (Fedora)
 elif command -v dnf > /dev/null 2>&1; then
     # Install required packages in form of a 'for' loop
@@ -30,6 +31,7 @@ elif command -v dnf > /dev/null 2>&1; then
         $sudo_cmd dnf install -y "${package}" > /dev/null 2>&1 || \
             echo "[ERROR] Failed installing '${package}'."
     done
+    PIP=pip
 # 'pacman' (Arch Linux)
 elif command -v pacman > /dev/null 2>&1; then
     # Install required packages in form of a 'for' loop
@@ -38,8 +40,8 @@ elif command -v pacman > /dev/null 2>&1; then
         $sudo_cmd pacman -Sy --noconfirm --needed "${package}" > /dev/null 2>&1 || \
             echo "[ERROR] Failed installing '${package}'."
     done
+    PIP=pip3
 fi
-PIP=pip3
 
 # Create virtual environment and install packages
 python3 -m venv .venv
