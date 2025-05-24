@@ -118,7 +118,7 @@ else
     fi
 fi
 
-ORG=AndroidDumps #your GitHub org name
+ORG=leddaz-dump-stash #your GitHub org name
 EXTENSION=$(echo "${INPUT##*.}" | inline-detox)
 UNZIP_DIR=$(basename ${INPUT/.$EXTENSION/})
 WORKING=${PWD}/working/${UNZIP_DIR}
@@ -525,7 +525,7 @@ fi
 # Telegram channel
 TG_TOKEN=$(< "$PWD"/.tgtoken)
 if [[ -n "$TG_TOKEN" ]]; then
-    CHAT_ID="@android_dumps"
+    CHAT_ID="@leddaz_dumpyara_dump"
     commit_head=$(git log --format=format:%H | head -n 1)
     commit_link="https://github.com/$ORG/$repo/commit/$commit_head"
     echo -e "Sending telegram notification"
